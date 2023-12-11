@@ -44,9 +44,8 @@ jobs:
           name: production-files
           path: ./build
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    name: Deploy
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Downloading artifact
